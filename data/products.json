@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Wireless Headphones",
+    "slug": "wireless-headphones",
+    "description": "Premium noise-cancelling wireless headphones with 30-hour battery life",
+    "price": 299.99,
+    "category": "Electronics",
+    "inventory": 40,
+    "lastUpdated": "2025-10-29T15:56:17.574Z"
+  },
+  {
+    "id": "2",
+    "name": "Smart Watch",
+    "slug": "smart-watch",
+    "description": "Fitness tracking smartwatch with GPS and heart rate monitor",
+    "price": 399.99,
+    "category": "Electronics",
+    "inventory": 12,
+    "lastUpdated": "2025-10-28T10:00:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Running Shoes",
+    "slug": "running-shoes",
+    "description": "Lightweight running shoes for athletes with superior cushioning",
+    "price": 299.99,
+    "category": "Sports",
+    "inventory": 11,
+    "lastUpdated": "2025-10-29T08:38:09.550Z"
+  },
+  {
+    "id": "4",
+    "name": "Yoga Mat",
+    "slug": "yoga-mat",
+    "description": "Non-slip eco-friendly yoga mat with carrying strap",
+    "price": 49.99,
+    "category": "Sports",
+    "inventory": 67,
+    "lastUpdated": "2025-10-28T10:00:00Z"
+  },
+  {
+    "id": "5",
+    "name": "Laptop Backpack",
+    "slug": "laptop-backpack",
+    "description": "Water-resistant backpack with padded laptop compartment",
+    "price": 79.99,
+    "category": "Accessories",
+    "inventory": 34,
+    "lastUpdated": "2025-10-28T10:00:00Z"
+  },
+  {
+    "id": "1761725378067",
+    "name": "Bracelet",
+    "slug": "bracelet",
+    "description": "Women's style",
+    "price": 399,
+    "category": "Accessories",
+    "inventory": 12,
+    "lastUpdated": "2025-10-29T08:09:38.068Z"
+  },
+  {
+    "id": "1761753504628",
+    "name": "Earrings",
+    "slug": "earrings",
+    "description": "Women Style",
+    "price": 39,
+    "category": "Accessories",
+    "inventory": 14,
+    "lastUpdated": "2025-10-29T15:58:51.745Z"
+  }
+]
