@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Save } from 'lucide-react';
+import { Save, Package, DollarSign, Layers, Archive } from 'lucide-react';
 
 // Define the shape of the form data
 interface FormData {
@@ -48,13 +48,20 @@ export default function ProductForm({ onSubmit }: ProductFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border rounded-xl p-8 shadow-2xl">
-      <h2 className="text-2xl font-bold mb-6 text-gray-900">Add New Product</h2>
+    <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+      <div className="flex items-center gap-3 mb-8">
+        <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-md">
+          <Package className="text-white" size={24} />
+        </div>
+        <h2 className="text-3xl font-extrabold text-slate-900">Add New Product</h2>
+      </div>
       
-      <div className="space-y-4">
+      <div className="space-y-6">
         {/* Product Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium mb-1 text-gray-700">Product Name</label>
+          <label htmlFor="name" className="block text-sm font-semibold mb-2 text-slate-700 uppercase tracking-wide">
+            Product Name
+          </label>
           <input
             type="text"
             id="name"
@@ -62,43 +69,61 @@ export default function ProductForm({ onSubmit }: ProductFormProps) {
             required
             value={formData.name}
             onChange={handleChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Enter product name"
+            className="border-2 border-slate-200 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-slate-900 placeholder-slate-400"
           />
         </div>
 
         {/* Description */}
         <div>
-          <label htmlFor="description" className="block text-sm font-medium mb-1 text-gray-700">Description</label>
+          <label htmlFor="description" className="block text-sm font-semibold mb-2 text-slate-700 uppercase tracking-wide">
+            Description
+          </label>
           <textarea
             id="description"
             name="description"
             required
             value={formData.description}
             onChange={handleChange}
-            className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-blue-500 focus:border-blue-500"
-            rows={3}
+            placeholder="Describe your product..."
+            className="border-2 border-slate-200 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-slate-900 placeholder-slate-400 resize-none"
+            rows={4}
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Price */}
           <div>
-            <label htmlFor="price" className="block text-sm font-medium mb-1 text-gray-700">Price ($)</label>
-            <input
-              type="number"
-              id="price"
-              name="price"
-              step="0.01"
-              required
-              value={formData.price}
-              onChange={handleChange}
-              className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-blue-500 focus:border-blue-500"
-            />
+            <label htmlFor="price" className="block text-sm font-semibold mb-2 text-slate-700 uppercase tracking-wide">
+              <div className="flex items-center gap-2">
+                <DollarSign size={16} className="text-green-600" />
+                Price
+              </div>
+            </label>
+            <div className="relative">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-semibold">$</span>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                step="0.01"
+                required
+                value={formData.price}
+                onChange={handleChange}
+                placeholder="0.00"
+                className="border-2 border-slate-200 rounded-xl pl-8 pr-4 py-3 w-full focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none text-slate-900 placeholder-slate-400"
+              />
+            </div>
           </div>
 
           {/* Category */}
           <div>
-            <label htmlFor="category" className="block text-sm font-medium mb-1 text-gray-700">Category</label>
+            <label htmlFor="category" className="block text-sm font-semibold mb-2 text-slate-700 uppercase tracking-wide">
+              <div className="flex items-center gap-2">
+                <Layers size={16} className="text-purple-600" />
+                Category
+              </div>
+            </label>
             <input
               type="text"
               id="category"
@@ -106,13 +131,19 @@ export default function ProductForm({ onSubmit }: ProductFormProps) {
               required
               value={formData.category}
               onChange={handleChange}
-              className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-blue-500 focus:border-blue-500"
+              placeholder="e.g., Electronics"
+              className="border-2 border-slate-200 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none text-slate-900 placeholder-slate-400"
             />
           </div>
 
           {/* Inventory */}
           <div>
-            <label htmlFor="inventory" className="block text-sm font-medium mb-1 text-gray-700">Inventory</label>
+            <label htmlFor="inventory" className="block text-sm font-semibold mb-2 text-slate-700 uppercase tracking-wide">
+              <div className="flex items-center gap-2">
+                <Archive size={16} className="text-blue-600" />
+                Inventory
+              </div>
+            </label>
             <input
               type="number"
               id="inventory"
@@ -120,16 +151,17 @@ export default function ProductForm({ onSubmit }: ProductFormProps) {
               required
               value={formData.inventory}
               onChange={handleChange}
-              className="border border-gray-300 rounded-lg px-4 py-2 w-full focus:ring-blue-500 focus:border-blue-500"
+              placeholder="0"
+              className="border-2 border-slate-200 rounded-xl px-4 py-3 w-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-slate-900 placeholder-slate-400"
             />
           </div>
         </div>
 
         <button
           type="submit"
-          className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md"
+          className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
         >
-          <Save size={20} />
+          <Save size={22} />
           Save Product
         </button>
       </div>

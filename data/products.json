@@ -16,8 +16,8 @@
     "description": "Fitness tracking smartwatch with GPS and heart rate monitor",
     "price": 399.99,
     "category": "Electronics",
-    "inventory": 12,
-    "lastUpdated": "2025-10-28T10:00:00Z"
+    "inventory": 13,
+    "lastUpdated": "2025-10-30T15:28:55.541Z"
   },
   {
     "id": "3",
@@ -56,8 +56,8 @@
     "description": "Women's style",
     "price": 399,
     "category": "Accessories",
-    "inventory": 12,
-    "lastUpdated": "2025-10-29T08:09:38.068Z"
+    "inventory": 5,
+    "lastUpdated": "2025-10-30T18:17:22.658Z"
   },
   {
     "id": "1761753504628",

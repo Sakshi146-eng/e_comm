@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Heart, HeartOff, Check, X } from 'lucide-react';
 
 // Key for localStorage
 const WISHLIST_STORAGE_KEY = 'nextjs_wishlist';
@@ -64,23 +65,42 @@ export default function AddToWishlist({
   };
 
   return (
-    <div>
+    <div className="space-y-3">
       <button
         onClick={handleToggleWishlist}
-        className={`w-full px-4 py-2 rounded transition-colors font-semibold ${
+        className={`w-full flex items-center justify-center gap-3 px-6 py-4 rounded-xl transition-all font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] ${
           isAdded 
-            ? 'bg-red-500 text-white hover:bg-red-600' 
-            : 'bg-blue-600 text-white hover:bg-blue-700'
+            ? 'bg-gradient-to-r from-red-500 to-pink-500 text-white hover:from-red-600 hover:to-pink-600' 
+            : 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700'
         }`}
       >
-        {isAdded ? 'Remove from Wishlist' : 'Add to Wishlist'}
+        {isAdded ? (
+          <>
+            <HeartOff size={22} className="fill-current" />
+            Remove from Wishlist
+          </>
+        ) : (
+          <>
+            <Heart size={22} />
+            Add to Wishlist
+          </>
+        )}
       </button>
 
       {/* Optional: Show a small confirmation message */}
       {message && (
-        <p className={`text-center mt-2 text-sm ${isAdded ? 'text-green-600' : 'text-red-600'}`}>
-          {message}
-        </p>
+        <div className={`flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold transition-all animate-in fade-in slide-in-from-top-2 duration-300 ${
+          isAdded 
+            ? 'bg-green-50 text-green-800 border border-green-200' 
+            : 'bg-red-50 text-red-800 border border-red-200'
+        }`}>
+          {isAdded ? (
+            <Check size={18} className="flex-shrink-0" />
+          ) : (
+            <X size={18} className="flex-shrink-0" />
+          )}
+          <span>{message}</span>
+        </div>
       )}
     </div>
   );
